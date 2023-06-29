@@ -8,7 +8,10 @@ import java.util.Scanner;
 
 /**
  * Minesweeper class represents a game of Minesweeper.
- * @author Jerry
+ * @author Jerry Libago
+ * @author Alex Bell
+ * @author Bri Andres
+ *
  * @version 1.0
  */
 public final class Minesweeper {
@@ -60,8 +63,9 @@ public final class Minesweeper {
                         adjacentMines(theField, row, column), 10);
                 System.out.print(theField[row][column]);
             }
+            System.out.println();
         }
-        System.out.println();
+        //System.out.println();
 
 
     }
