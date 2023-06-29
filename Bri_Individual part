@@ -37,13 +37,15 @@ public class mineSweeper {
             char[][] f = new char[MRows][NCol];
             FieldNum++;
         }
-
+ }
+    //Checking to see if there is a mine.
+    public static boolean IsItAMine(int MRows, int NCol, char Cell[]){
+        if(Cell[MRows][NCol] == '*') {
+            return true;
+            if (Cell[MRows][NCol] != '*') {
+                return false;
+            }
+        }
     }
-    public static void Solve(char[][] f){
-            int M = f.length; //number of rows
-            int N = f.length; //number of columns
-
-        }
-        }
-        }
+}
 
