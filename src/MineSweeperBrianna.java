@@ -8,18 +8,18 @@ Individual Solution
 
 import java.util.Scanner;
 
+
+
 public class MineSweeperBrianna {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int FieldNum = 1;
-
+        char x = (char)'0'+ 1 ;
         while (true){
             //M is Rows
             int MRows = scanner.nextInt();
-
             //N is columns
             int NCol = scanner.nextInt();
-
             scanner.nextLine();
 
             //if row is equal to zero
