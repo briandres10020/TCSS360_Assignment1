@@ -1,3 +1,7 @@
+/**
+ * @author Alex Bell
+ * @version 1.0
+ */
 public class MineSweeper {
     /**
      *
