@@ -5,18 +5,19 @@ mineSweeper
 Individual Solution
  */
 
+
 import java.util.Scanner;
 
 public class MineSweeperBrianna {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int FieldNum = 1;
+        int FieldNum =1;
 
         while (true){
             //N is columns
-        int NCol = scanner.nextInt();
+            int NCol = scanner.nextInt();
             //M is Rows
-        int MRows = scanner.nextInt();
+            int MRows = scanner.nextInt();
 
             //if row is equal to zero
             if(MRows == 0){
@@ -37,15 +38,20 @@ public class MineSweeperBrianna {
             char[][] f = new char[MRows][NCol];
             FieldNum++;
         }
- }
-    //Checking to see if there is a mine.
-    public static boolean IsItAMine(int MRows, int NCol, char Cell[]){
-        if(Cell[MRows][NCol] == '*') {
+    }
+    public static void solveMine(final char[][] Board){
+
+    }
+
+
+    //Checking to see if there is a mine in the board.
+    public static boolean IsItAMine(int MRows, int NCol, char Board[][]){
+        if(Board[MRows][NCol] == '*') {
             return true;
-            if (Cell[MRows][NCol] != '*') {
-                return false;
-            }
+        }
+        else{
+            return false;
         }
     }
-}
 
+}
