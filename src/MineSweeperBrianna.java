@@ -41,6 +41,7 @@ public class MineSweeperBrianna {
                     Board[i][j] = line.charAt(j);
                 }
             }
+
             //calling Board of solveMine
             solveMine(Board);
 
@@ -48,7 +49,7 @@ public class MineSweeperBrianna {
 
             FieldNum++;
 
-            for (int row = 0; row < Board.length; row++) {
+            for(int row = 0; row < Board.length; row++) {
                 for (int column = 0; column < Board[0].length; column++) {
                     System.out.print(Board[row][column]);
                 }
@@ -73,6 +74,7 @@ public class MineSweeperBrianna {
                     //Setting 2d array format
                     Board[a][b] = Character.forDigit(Mines, 10);
                     }
+
                 }
                 }
             }
@@ -81,50 +83,58 @@ public class MineSweeperBrianna {
     //Method to check around board
     public static int Surroundings(int MRows, int NCol, char Board[][]){
         int result = 0;
-        //if statement: row - 1 < Board.length and NCol - 1 < Board[0].length to check
-        //if cell is in range
 
-        //Prev Row&Col
+        //if statements to check position
+
+        //Prev Row, Prev Col
         if(MRows - 1 < Board.length && NCol - 1 < Board[0].length
-             && IsItAMine(MRows - 1,NCol - 1,Board)){
+                && MRows - 1 >=0 && NCol - 1>0 &&
+                IsItAMine(MRows - 1,NCol - 1,Board)){
             //increment result
                 result++;
         }
         //Prev Row, same Col
-        if(MRows - 1 < Board.length && IsItAMine(MRows - 1,NCol,Board)){
+        if(MRows - 1 < Board.length && MRows - 1 >=0
+                && IsItAMine(MRows - 1,NCol,Board)){
             //increment result
             result++;
         }
         //Prev Row,Next Col
         if(MRows - 1 < Board.length && NCol + 1 < Board[0].length
-                && IsItAMine(MRows - 1,NCol + 1,Board)){
+                && MRows - 1 >=0 && NCol + 1>0 &&
+                IsItAMine(MRows - 1,NCol + 1,Board)){
             //increment result
             result++;
         }
         //Same Row, Prev Col
         if(NCol - 1 < Board[0].length
-                && IsItAMine(MRows,NCol - 1,Board)){
+                && NCol -1 > 0 && IsItAMine(MRows,NCol - 1,Board)){
             //increment result
             result++;
         }
         //Same Row, Next Col
-        if( NCol + 1 < Board[0].length && IsItAMine(MRows,NCol + 1,Board)){
+        if(NCol + 1 < Board[0].length && NCol + 1>0
+                && IsItAMine(MRows,NCol + 1,Board)){
             //increment result
             result++;
         }
         //Next Row, Prev Col
         if(MRows + 1 < Board.length && NCol - 1 < Board[0].length
-                && IsItAMine(MRows + 1,NCol - 1,Board)){
+                && MRows + 1 >=0 && NCol - 1>0 &&
+                IsItAMine(MRows + 1,NCol - 1,Board)){
             //increment result
             result++;
-        }//Next Row, Same Col
-        if(MRows + 1 < Board.length && IsItAMine(MRows + 1,NCol,Board)){
+        }
+        //Next Row, Same Col
+        if(MRows + 1 < Board.length &&
+                MRows + 1 >=0  && IsItAMine(MRows + 1,NCol,Board)){
             //increment result
             result++;
         }
         //Next Row,Next Col
         if(MRows + 1 < Board.length && NCol + 1 < Board[0].length
-                && IsItAMine(MRows + 1,NCol + 1,Board)){
+                && MRows + 1 >=0 && NCol + 1 >0 &&
+                IsItAMine(MRows + 1,NCol + 1,Board)){
             //increment result
             result++;
         }
