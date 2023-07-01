@@ -1,5 +1,5 @@
 /*
-Brianna Andres
+@Author: Brianna Andres
 TCSS 360 assignment 1
 mineSweeper
 Individual Solution
