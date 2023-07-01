@@ -7,7 +7,7 @@ Individual Solution
 
 import java.util.Scanner;
 
-public class mineSweeperBrianna {
+public class MineSweeperBrianna {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int FieldNum = 1;
