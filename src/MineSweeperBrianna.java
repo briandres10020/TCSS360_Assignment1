@@ -14,10 +14,11 @@ public class MineSweeperBrianna {
         int FieldNum = 1;
 
         while (true){
-            //N is columns
-            int NCol = scanner.nextInt();
             //M is Rows
             int MRows = scanner.nextInt();
+
+            //N is columns
+            int NCol = scanner.nextInt();
 
             scanner.nextLine();
 
