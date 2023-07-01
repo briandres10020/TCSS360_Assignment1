@@ -35,14 +35,75 @@ public class MineSweeperBrianna {
                 System.out.println(" \n ");
             }
             //creating a 2d array of Row and Columns
-            char[][] f = new char[MRows][NCol];
+            char[][] Board = new char[MRows][NCol];
             FieldNum++;
         }
     }
-    public static void solveMine(final char[][] Board){
 
+    //Method to solve Mine
+    public static void solveMine(final char[][] Board){
+        //for loop for MRows
+    for (int a = 0; a < Board.length; a++){
+        //for loop for NCol
+            for( int b = 0; b < Board[0].length; b++){
+                if(!IsItAMine(a,b,Board)){
+                }
+                }
+            }
     }
 
+    //Method to check around board
+    public static int Surroundings(int MRows, int NCol, char Board[][]){
+        int result = 0;
+        //is statement: row - 1 < Board.length and NCol - 1 < Board[0].length to check
+        //if cell is in range
+
+        //Prev Row&Col
+        if(MRows - 1 < Board.length && NCol - 1 < Board[0].length
+             && IsItAMine(MRows - 1,NCol - 1,Board)){
+            //increment result
+                result++;
+        }
+        //Prev Row, same Col
+        if(MRows - 1 < Board.length && IsItAMine(MRows - 1,NCol,Board)){
+            //increment result
+            result++;
+        }
+        //Prev Row,Next Col
+        if(MRows - 1 < Board.length && NCol + 1 < Board[0].length
+                && IsItAMine(MRows - 1,NCol + 1,Board)){
+            //increment result
+            result++;
+        }
+        //Same Row, Prev Col
+        if(NCol - 1 < Board[0].length
+                && IsItAMine(MRows,NCol - 1,Board)){
+            //increment result
+            result++;
+        }
+        //Same Row, Next Col
+        if( NCol + 1 < Board[0].length && IsItAMine(MRows,NCol + 1,Board)){
+            //increment result
+            result++;
+        }
+        //Next Row, Prev Col
+        if(MRows + 1 < Board.length && NCol - 1 < Board[0].length
+                && IsItAMine(MRows + 1,NCol - 1,Board)){
+            //increment result
+            result++;
+        }//Next Row, Same Col
+        if(MRows + 1 < Board.length && IsItAMine(MRows + 1,NCol,Board)){
+            //increment result
+            result++;
+        }
+        //Next Row,Next Col
+        if(MRows + 1 < Board.length && NCol + 1 < Board[0].length
+                && IsItAMine(MRows + 1,NCol + 1,Board)){
+            //increment result
+            result++;
+        }
+        return result;
+    }
 
     //Checking to see if there is a mine in the board.
     public static boolean IsItAMine(int MRows, int NCol, char Board[][]){
@@ -53,5 +114,6 @@ public class MineSweeperBrianna {
             return false;
         }
     }
-
 }
+
+
