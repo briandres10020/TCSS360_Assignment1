@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -172,6 +173,32 @@ class MineSweeperTest {
 
                 }
 
+            }
+        }
+    }
+    @Test
+    void testSolve4x4Given() {
+        final MineSweeper test = new MineSweeper(4,4);
+        final char[][] field = {
+                {'*', '.', '.', '.'},
+                {'.', '.', '.', '.'},
+                {'.', '*', '.', '.'},
+                {'.', '.', '.', '.'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {'*', '1', '0', '0'},
+                {'2', '2', '1', '0'},
+                {'1', '*', '1', '0'},
+                {'1', '1', '1', '0'}};
+        final char[][] result = test.solve();
+
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail("Return 2D array was larger than expected");
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
             }
         }
     }
