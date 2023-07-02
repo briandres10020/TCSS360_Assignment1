@@ -1,5 +1,5 @@
 /**
- * Author: Jerry Libago
+ * @author Jerry Libago
  * Class: TCSS 360
  *
  */
