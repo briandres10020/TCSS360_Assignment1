@@ -1,13 +1,9 @@
-/**
- * @author Jerry Libago
- * Class: TCSS 360
- *
- */
-
 import java.util.Scanner;
 
 /**
  * Minesweeper class represents a game of Minesweeper.
+ * @author Jerry Libago
+ * @version 1.0
  */
 public class MinesweeperJerry {
     public static void main(String[] args) {
