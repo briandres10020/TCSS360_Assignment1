@@ -363,37 +363,101 @@ class MineSweeperTest {
 
     @Test
     void testSolve16x3() {
+        final MineSweeper test = new MineSweeper(16, 3);
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'.', '*', '.'},
+                {'.', '.', '.'},
+                {'.', '.', '.'},
+                {'.', '*', '.'},
+                {'.', '.', '.'},
+                {'.', '.', '.'},
+                {'.', '*', '.'},
+                {'.', '.', '.'},
+                {'.', '.', '.'},
+                {'.', '*', '.'},
+                {'.', '.', '.'},
+                {'.', '.', '.'},
+                {'.', '*', '.'},
+                {'.', '.', '.'},
+                {'.', '.', '.'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {'1', '1', '1'},
+                {'1', '*', '1'},
+                {'1', '1', '1'},
+                {'1', '1', '1'},
+                {'1', '*', '1'},
+                {'1', '1', '1'},
+                {'1', '1', '1'},
+                {'1', '*', '1'},
+                {'1', '1', '1'},
+                {'1', '1', '1'},
+                {'1', '*', '1'},
+                {'1', '1', '1'},
+                {'1', '1', '1'},
+                {'1', '*', '1'},
+                {'1', '1', '1'},
+                {'0', '0', '0'}};
+        final char[][] result = test.solve();
 
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
     @Test
     void testSolve1x32() {
-            final MineSweeper test = new MineSweeper(1, 32);
-            final char[][] field = {
-                    {'*', '.', '.', '*', '*', '*', '.', '.', '*', '*', '.', '*', '.', '.',
-                            '*', '.', '*', '.', '.', '*', '*', '*', '.', '.', '*', '*', '.',
-                            '*', '.', '.', '*', '.' }};
-            test.mineFieldSet(field);
-            final char[][] expected = {
-                    {'*', '1', '1', '*', '*', '*', '1', '1', '*', '*', '1', '*', '1', '1',
-                            '*', '1', '*', '1', '1', '*', '*', '*', '1', '1', '*', '*', '1',
-                            '*', '1', '1', '*', '1' }};
-            final char[][] result = test.solve();
+        final MineSweeper test = new MineSweeper(1, 32);
+        final char[][] field = {
+                {'*', '.', '.', '*', '*', '*', '.', '.', '*', '*', '.',
+                 '*', '.', '.', '*', '.', '*', '.', '.', '*', '*', '*',
+                 '.', '.', '*', '*', '.', '*', '.', '.', '*', '.' }};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {'*', '1', '1', '*', '*', '*', '1', '1', '*', '*', '2',
+                 '*', '1', '1', '*', '2', '*', '1', '1', '*', '*', '*',
+                 '1', '1', '*', '*', '2', '*', '1', '1', '*', '1' }};
+        final char[][] result = test.solve();
 
-            for (int row = 0; row < result.length; row++) {
-                for (int col = 0; col < result[0].length; col++) {
-                    if (row >= expected.length || col >= expected[0].length) {
-                        fail(RESULT_SIZE_FAIL);
-                    } else {
-                        assertEquals(expected[row][col], result[row][col]);
-                    }
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
                 }
             }
-
         }
-
+    }
     @Test
     void testSolve32x1() {
+        final MineSweeper test = new MineSweeper(32, 1);
+        final char[][] field = {
+                {'*'}, {'.'}, {'.'}, {'*'}, {'*'}, {'.'}, {'.'}, {'*'}, {'.'}, {'*'}, {'.'},
+                {'.'}, {'*'}, {'*'}, {'*'}, {'.'}, {'*'}, {'*'}, {'.'}, {'.'}, {'*'}, {'*'},
+                {'.'}, {'.'}, {'.'}, {'.'}, {'*'}, {'*'}, {'.'}, {'.'}, {'.'}, {'.'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {'*'}, {'1'}, {'1'}, {'*'}, {'*'}, {'1'}, {'1'}, {'*'}, {'2'}, {'*'}, {'1'},
+                {'1'}, {'*'}, {'*'}, {'*'}, {'2'}, {'*'}, {'*'}, {'1'}, {'1'}, {'*'}, {'*'},
+                {'1'}, {'0'}, {'0'}, {'1'}, {'*'}, {'*'}, {'1'}, {'0'}, {'0'}, {'0'}};
+        final char[][] result = test.solve();
 
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
     @Test
     void testSolve9x9() {
