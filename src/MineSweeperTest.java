@@ -241,7 +241,7 @@ class MineSweeperTest {
         for (int row = 0; row < result.length; row++) {
             for (int col = 0; col < result[0].length; col++) {
                 if (row >= expected.length || col >= expected[0].length) {
-                    fail("Return 2D array was larger than expected");
+                    fail(RESULT_SIZE_FAIL);
                 } else {
                     assertEquals(expected[row][col], result[row][col]);
                 }
@@ -283,29 +283,193 @@ class MineSweeperTest {
 
     @Test
     void testSolve1x1Empty() {
+        final MineSweeper test = new MineSweeper(1, 1);
+        final char[][] field = {{'.'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {{'0'}};
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
 
     }
 
     @Test
     void testSolve100x100Empty() {
+        final MineSweeper test = new MineSweeper(100, 100);
+        final char[][] field = new char[100][100];
+        test.mineFieldSet(field);
+        final char[][] expected = new char[100][100];
+        for (int row = 0; row < expected.length; row++) {
+            for (int col = 0; col < expected[0].length; col++) {
+                expected[row][col] = '0';
+            }
+        }
 
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
     @Test
     void testSolve1x100Empty() {
+        final MineSweeper test = new MineSweeper(1, 100);
+        final char[][] field = new char[1][100];
+        test.mineFieldSet(field);
+        final char[][] expected = new char[1][100];
+        for (int row = 0; row < expected.length; row++) {
+            for (int col = 0; col < expected[0].length; col++) {
+                expected[row][col] = '0';
+            }
+        }
 
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
+    }
+
+    @Test
+    void testSolve100x1Empty() {
+        final MineSweeper test = new MineSweeper(100, 1);
+        final char[][] field = new char[100][1];
+        test.mineFieldSet(field);
+        final char[][] expected = new char[100][1];
+        for (int row = 0; row < expected.length; row++) {
+            for (int col = 0; col < expected[0].length; col++) {
+                expected[row][col] = '0';
+            }
+        }
+
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
     @Test
     void testSolve1x1Mine() {
-
+        final MineSweeper test = new MineSweeper(1, 1);
+        final char[][] field = {{'*'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {{'*'}};
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
     @Test
     void testSolve1x100AllMines() {
+        final MineSweeper test = new MineSweeper(1, 100);
+        final char[][] field = new char[1][100];
+        for (int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field[0].length; col++) {
+                field[row][col] = '*';
+            }
+        }
+        test.mineFieldSet(field);
+        final char[][] expected = new char[1][100];
+        for (int row = 0; row < expected.length; row++) {
+            for (int col = 0; col < expected[0].length; col++) {
+                expected[row][col] = '*';
+            }
+        }
 
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
+    @Test
+    void testSolve100x1AllMines() {
+        final MineSweeper test = new MineSweeper(100, 1);
+        final char[][] field = new char[100][1];
+        for (int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field[0].length; col++) {
+                field[row][col] = '*';
+            }
+        }
+        test.mineFieldSet(field);
+        final char[][] expected = new char[100][1];
+        for (int row = 0; row < expected.length; row++) {
+            for (int col = 0; col < expected[0].length; col++) {
+                expected[row][col] = '*';
+            }
+        }
 
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
+    }
     @Test
     void testSolve100x100AllMines() {
+        final MineSweeper test = new MineSweeper(100, 100);
+        final char[][] field = new char[100][100];
+        for (int row = 0; row < field.length; row++) {
+            for (int col = 0; col < field[0].length; col++) {
+                field[row][col] = '*';
+            }
+        }
+        test.mineFieldSet(field);
+        final char[][] expected = new char[100][100];
+        for (int row = 0; row < expected.length; row++) {
+            for (int col = 0; col < expected[0].length; col++) {
+                expected[row][col] = '*';
+            }
+        }
 
+        final char[][] result = test.solve();
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
 
 
