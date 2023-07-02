@@ -9,7 +9,7 @@ import java.util.Scanner;
 /**
  * Minesweeper class represents a game of Minesweeper.
  */
-public class Minesweeper {
+public class MinesweeperJerry {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int fieldCount = 1;
