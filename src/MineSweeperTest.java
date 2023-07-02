@@ -179,6 +179,24 @@ class MineSweeperTest {
         }
     }
     @Test
+    void testSweep1Edge() {
+        final MineSweeper test = new MineSweeper(3, 3);
+        final char[][] field = {{'.', '.', '.'}, {'.', '*', '.'}, {'.', '.', '.'}};
+        test.mineFieldSet(field);
+        final Method[] methods = test.getClass().getDeclaredMethods();
+        for (Method m: methods) {
+            if (m.getName().equals(SWEEP_METHOD)) {
+                m.setAccessible(true);
+                try {
+                    assertEquals(1, m.invoke(test, 2, 1));
+                } catch (final ReflectiveOperationException ignored) {
+
+                }
+
+            }
+        }
+    }
+    @Test
     void testSolve4x4Given() {
         final MineSweeper test = new MineSweeper(4, 4);
         final char[][] field = {
