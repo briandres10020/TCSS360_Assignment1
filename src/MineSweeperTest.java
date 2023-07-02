@@ -180,7 +180,7 @@ class MineSweeperTest {
     }
     @Test
     void testSolve4x4Given() {
-        final MineSweeper test = new MineSweeper(4,4);
+        final MineSweeper test = new MineSweeper(4, 4);
         final char[][] field = {
                 {'*', '.', '.', '.'},
                 {'.', '.', '.', '.'},
