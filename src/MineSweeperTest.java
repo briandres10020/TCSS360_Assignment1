@@ -19,7 +19,10 @@ class MineSweeperTest {
     @Test
     void testSweep8() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'*', '*', '*'}, {'*', '.', '*'}, {'*', '*', '*'}};
+        final char[][] field = {
+                {'*', '*', '*'},
+                {'*', '.', '*'},
+                {'*', '*', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -37,7 +40,10 @@ class MineSweeperTest {
     @Test
     void testSweep7() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '*', '*'}, {'*', '.', '*'}, {'*', '*', '*'}};
+        final char[][] field = {
+                {'.', '*', '*'},
+                {'*', '.', '*'},
+                {'*', '*', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -55,7 +61,10 @@ class MineSweeperTest {
     @Test
     void testSweep6() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '*'}, {'*', '.', '*'}, {'*', '*', '*'}};
+        final char[][] field = {
+                {'.', '.', '*'},
+                {'*', '.', '*'},
+                {'*', '*', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -73,7 +82,10 @@ class MineSweeperTest {
     @Test
     void testSweep5() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '.'}, {'*', '.', '*'}, {'*', '*', '*'}};
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'*', '.', '*'},
+                {'*', '*', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -91,7 +103,10 @@ class MineSweeperTest {
     @Test
     void testSweep4() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '.'}, {'.', '.', '*'}, {'*', '*', '*'}};
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'.', '.', '*'},
+                {'*', '*', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -109,7 +124,10 @@ class MineSweeperTest {
     @Test
     void testSweep3() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '.'}, {'.', '.', '.'}, {'*', '*', '*'}};
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'.', '.', '.'},
+                {'*', '*', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -127,7 +145,10 @@ class MineSweeperTest {
     @Test
     void testSweep2() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '.'}, {'.', '.', '.'}, {'.', '*', '*'}};
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'.', '.', '.'},
+                {'.', '*', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -145,7 +166,10 @@ class MineSweeperTest {
     @Test
     void testSweep1() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '.'}, {'.', '.', '.'}, {'.', '.', '*'}};
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'.', '.', '.'},
+                {'.', '.', '*'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -163,7 +187,10 @@ class MineSweeperTest {
     @Test
     void testSweep0() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '.'}, {'.', '*', '.'}, {'.', '.', '.'}};
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'.', '*', '.'},
+                {'.', '.', '.'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -181,7 +208,10 @@ class MineSweeperTest {
     @Test
     void testSweep1Edge() {
         final MineSweeper test = new MineSweeper(3, 3);
-        final char[][] field = {{'.', '.', '.'}, {'.', '*', '.'}, {'.', '.', '.'}};
+        final char[][] field = {
+                {'.', '.', '.'},
+                {'.', '*', '.'},
+                {'.', '.', '.'}};
         test.mineFieldSet(field);
         final Method[] methods = test.getClass().getDeclaredMethods();
         for (Method m: methods) {
@@ -251,11 +281,58 @@ class MineSweeperTest {
 
     @Test
     void testSolve5x5() {
+        final MineSweeper test = new MineSweeper(5, 5);
+        final char[][] field = {
+                {'*', '.', '.', '.', '.'},
+                {'.', '.', '*', '.', '.'},
+                {'.', '*', '.', '*', '.'},
+                {'.', '.', '.', '.', '.'},
+                {'.', '.', '.', '.', '.'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {'*', '2', '1', '1', '0'},
+                {'2', '3', '*', '2', '1'},
+                {'1', '*', '3', '*', '1'},
+                {'1', '1', '2', '1', '1'},
+                {'0', '0', '0', '0', '0'}};
+        final char[][] result = test.solve();
 
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
     }
 
     @Test
     void testSolve4x6() {
+        final MineSweeper test = new MineSweeper(4, 6);
+        final char[][] field = {
+                {'*', '.', '.', '*', '*', '*'},
+                {'.', '.', '.', '*', '.', '*'},
+                {'.', '*', '.', '*', '*', '*'},
+                {'.', '.', '.', '.', '.', '.'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {'*', '1', '2', '*', '*', '*'},
+                {'2', '2', '4', '*', '8', '*'},
+                {'1', '*', '3', '*', '*', '*'},
+                {'1', '1', '2', '2', '3', '2'}};
+        final char[][] result = test.solve();
+
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
 
     }
     @Test
