@@ -52,6 +52,7 @@ public final class MinesweeperInputGenerator {
 
         // Randomly placing mines
         int mines = (int) (PERCENT_MINES * rows * cols);
+            //while mines is greater than zero
         while (mines > 0) {
             final int row = rand.nextInt(rows);
             final int col = rand.nextInt(cols);

@@ -249,20 +249,26 @@ class MineSweeperTest {
         }
     }
 
+
+    @Test
+    void testSolve1x1Empty() {
+
+    }
+
+    @Test
+    void testSolve100x100Empty() {
+
+    }
+    @Test
+    void testSolve1x100Empty() {
+
+    }
     @Test
     void testSolve1x1Mine() {
 
     }
     @Test
-    void testSolve1x1Empty() {
-
-    }
-    @Test
     void testSolve1x100AllMines() {
-
-    }
-    @Test
-    void testSolve1x100Empty() {
 
     }
 
@@ -270,10 +276,7 @@ class MineSweeperTest {
     void testSolve100x100AllMines() {
 
     }
-    @Test
-    void testSolve100x100Empty() {
 
-    }
 
     //Need 7 more Solve tests
 
