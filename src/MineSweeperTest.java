@@ -1,7 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +10,10 @@ class MineSweeperTest {
      * Sweep method name, for use in reflections access to sweep method.
      */
     public static final String SWEEP_METHOD = "sweep";
-    public static final String MY_MINE_FIELD = "myMineField";
+    /**
+     * Fail msg for when returned array was too big.
+     */
+    public static final String RESULT_SIZE_FAIL = "Returned 2D array was larger than expected";
 
 
     @Test
@@ -190,6 +192,30 @@ class MineSweeperTest {
                 {'2', '2', '1', '0'},
                 {'1', '*', '1', '0'},
                 {'1', '1', '1', '0'}};
+        final char[][] result = test.solve();
+
+        for (int row = 0; row < result.length; row++) {
+            for (int col = 0; col < result[0].length; col++) {
+                if (row >= expected.length || col >= expected[0].length) {
+                    fail(RESULT_SIZE_FAIL);
+                } else {
+                    assertEquals(expected[row][col], result[row][col]);
+                }
+            }
+        }
+    }
+    @Test
+    void testSolve3x5Given() {
+        final MineSweeper test = new MineSweeper(3, 5);
+        final char[][] field = {
+                {'*', '*', '.', '.', '.'},
+                {'.', '.', '.', '.', '.'},
+                {'.', '*', '.', '.', '.'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {'*', '*', '1', '0', '0'},
+                {'3', '3', '2', '0', '0'},
+                {'1', '*', '1', '0', '0'}};
         final char[][] result = test.solve();
 
         for (int row = 0; row < result.length; row++) {
