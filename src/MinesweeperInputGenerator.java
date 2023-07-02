@@ -1,13 +1,17 @@
-/**
- * Imports the Random class from java.util package
- */
 import java.util.Random;
 
 /**
  * This class is used to generate a Minesweeper field.
+ * @author Jerry Libago
+ * @version 1.0
  */
-public class MinesweeperInputGenerator {
+public final class MinesweeperInputGenerator {
 
+
+    /**
+     * Percentage of mines in the field.
+     */
+    private static final double PERCENT_MINES = 0.2;
     /**
      * Maximum number of rows in the field.
      */
@@ -18,10 +22,9 @@ public class MinesweeperInputGenerator {
      */
     private static final int MAX_COLS = 100;
 
-    /**
-     * Percentage of mines in the field.
-     */
-    private static final double PERCENT_MINES = 0.2;
+    private MinesweeperInputGenerator() {
+        super();
+    }
 
     /**
      * Main method of the program where it
@@ -30,15 +33,15 @@ public class MinesweeperInputGenerator {
      *
      * @param theArgs command-line arguments (not used)
      */
-    public static void main(String[] theArgs) {
-        Random rand = new Random();
+    public static void main(final String[] theArgs) {
+        final Random rand = new Random();
 
         // Randomly determines the number of rows and columns (at least 1)
-        int rows = rand.nextInt(MAX_ROWS) + 1;
-        int cols = rand.nextInt(MAX_COLS) + 1;
+        final int rows = rand.nextInt(MAX_ROWS) + 1;
+        final int cols = rand.nextInt(MAX_COLS) + 1;
 
         // Creating field
-        char[][] field = new char[rows][cols];
+        final char[][] field = new char[rows][cols];
 
         // Initializing field with safe squares
         for (int i = 0; i < rows; i++) {
@@ -50,8 +53,8 @@ public class MinesweeperInputGenerator {
         // Randomly placing mines
         int mines = (int) (PERCENT_MINES * rows * cols);
         while (mines > 0) {
-            int row = rand.nextInt(rows);
-            int col = rand.nextInt(cols);
+            final int row = rand.nextInt(rows);
+            final int col = rand.nextInt(cols);
             if (field[row][col] != '*') {
                 field[row][col] = '*';
                 mines--;
