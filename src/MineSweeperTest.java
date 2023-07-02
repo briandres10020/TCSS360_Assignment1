@@ -249,6 +249,15 @@ class MineSweeperTest {
         }
     }
 
+    @Test
+    void testSolve5x5() {
+
+    }
+
+    @Test
+    void testSolve4x6() {
+
+    }
 
     @Test
     void testSolve1x1Empty() {
@@ -277,7 +286,8 @@ class MineSweeperTest {
 
     }
 
+    //Need 5 more Solve tests
 
-    //Need 7 more Solve tests
+
 
 }
