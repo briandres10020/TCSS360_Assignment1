@@ -8,6 +8,7 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import org.junit.jupiter.api.Test;
 
@@ -21,6 +22,48 @@ class MineSweeperTest {
      * Fail msg for when returned array was too big.
      */
     public static final String RESULT_SIZE_FAIL = "Returned 2D array was larger than expected";
+
+    @Test
+    void testSetMineField() {
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
+        final char[][] field = {
+                {'*', '*', '*'},
+                {'*', '.', '*'},
+                {'*', '*', '*'}};
+        test.mineFieldSet(field);
+        final char[][] expected = {
+                {(char) 0, (char) 0, (char) 0, (char) 0, (char) 0},
+                {(char) 0, '*', '*', '*', (char) 0},
+                {(char) 0, '*', '.', '*', (char) 0},
+                {(char) 0, '*', '*', '*', (char) 0},
+                {(char) 0,  (char) 0,  (char) 0,  (char) 0, (char) 0}};
+
+        final Field[] fields = test.getClass().getDeclaredFields();
+
+        for (Field f: fields) {
+            if (f.getName().equals("myMineField")) {
+                f.setAccessible(true);
+                try {
+                    final char[][] result = (char[][]) f.get(test);
+                    for (int row = 0; row < result.length; row++) {
+                        for (int col = 0; col < result[0].length; col++) {
+                            if (row >= expected.length || col >= expected[0].length) {
+                                fail(RESULT_SIZE_FAIL);
+                            } else {
+                                assertEquals(expected[row][col], result[row][col]);
+                            }
+                        }
+                    }
+                } catch (final ReflectiveOperationException ignored) {
+
+                }
+
+            }
+        }
+
+    }
 
     @Test
     void testSweep8() {
