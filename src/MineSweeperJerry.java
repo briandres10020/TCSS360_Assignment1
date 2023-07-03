@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @author Jerry Libago
  * @version 1.0
  */
-public class MinesweeperJerry {
+public class MineSweeperJerry {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int fieldCount = 1;
