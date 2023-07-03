@@ -1,3 +1,9 @@
+/**
+ * @author Alex Bell
+ * @author Bri Andres
+ * @author Jerry Libago
+ */
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
