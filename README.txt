@@ -2,7 +2,7 @@
 This is Assignment 1 for TCSS360.
 
 Group members: Bri Andres, Alex Bell, Jerry Libago
-
+IDE: IntelliJ
 Estimate time it took to produce solution:
     We all started working together on Thursday, discussing our progress with our individual solutions.
     At this point 1 of us was done and 2 of us had not finished the individual part. By Friday, we had

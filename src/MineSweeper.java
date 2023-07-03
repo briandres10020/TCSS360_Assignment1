@@ -1,5 +1,6 @@
 /**
  * @author Alex Bell
+ * @author
  * @version 1.0
  */
 public class MineSweeper {
@@ -63,7 +64,8 @@ public class MineSweeper {
                 if (myMineField[row + 1][col + 1] == '*') {
                     solution[row][col] = '*';
                 } else {
-                    solution[row][col] = Character.forDigit(sweep(row + 1, col + 1),10);
+                    final int radix = 10;
+                    solution[row][col] = Character.forDigit(sweep(row + 1, col + 1), radix);
                 }
             }
         }
