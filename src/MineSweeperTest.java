@@ -15,7 +15,6 @@ class MineSweeperTest {
      */
     public static final String RESULT_SIZE_FAIL = "Returned 2D array was larger than expected";
 
-// Tests for Mine Detection method
     @Test
     void testSweep8() {
         final int rows = 3;
@@ -254,8 +253,6 @@ class MineSweeperTest {
             }
         }
     }
-
-    // Full solve Tests
     @Test
     void testSolve4x4Given() {
         final int rows = 4;
