@@ -6,6 +6,10 @@
 import java.util.Scanner;
 
 public final class MineSweeperMain {
+    /**
+     * Reads in the input and generates a MineSweeper to solve the MineField,
+     * then prints the output to the console.
+     */
     private MineSweeperMain() {
         super();
     }
