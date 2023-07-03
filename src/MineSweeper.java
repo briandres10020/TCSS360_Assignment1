@@ -35,8 +35,8 @@ public class MineSweeper {
      * Takes in an amount of rows and columns, then uses that to create a buffered,
      * 2D array that the minefield can be copied into. Also checks the range of the parameters,
      *  and saves them for later use.
-     * @param theRow
-     * @param theCol
+     * @param theRow Number of Rows
+     * @param theCol Number of columns
      */
     public MineSweeper(final int theRow, final int theCol) {
         if (theRow < MIN_SIZE || MAX_SIZE < theRow) {
@@ -56,7 +56,7 @@ public class MineSweeper {
     /**
      * Takes in a 2D character array representing the minefield
      * and copies that array into the buffered array created upon object instantiation.
-     * @param theMineField
+     * @param theMineField The MineField to be Processed by this MineSweeper
      */
     public void mineFieldSet(final char[][] theMineField) {
         if (theMineField.length != myRows || theMineField[0].length != myColumns) {
