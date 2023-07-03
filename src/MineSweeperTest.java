@@ -18,7 +18,9 @@ class MineSweeperTest {
 // Tests for Mine Detection method
     @Test
     void testSweep8() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '*', '*'},
                 {'*', '.', '*'},
@@ -29,7 +31,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(8, m.invoke(test, 2, 2));
+                    final int expected = 8;
+                    assertEquals(expected, m.invoke(test, 2, 2));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -39,7 +42,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep7() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '*', '*'},
                 {'*', '.', '*'},
@@ -50,7 +55,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(7, m.invoke(test, 2, 2));
+                    final int expected = 7;
+                    assertEquals(expected, m.invoke(test, 2, 2));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -60,7 +66,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep6() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '*'},
                 {'*', '.', '*'},
@@ -71,7 +79,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(6, m.invoke(test, 2, 2));
+                    final int expected = 6;
+                    assertEquals(expected, m.invoke(test, 2, 2));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -81,7 +90,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep5() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'*', '.', '*'},
@@ -92,7 +103,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(5, m.invoke(test, 2, 2));
+                    final int expected = 5;
+                    assertEquals(expected, m.invoke(test, 2, 2));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -102,7 +114,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep4() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'.', '.', '*'},
@@ -113,7 +127,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(4, m.invoke(test, 2, 2));
+                    final int expected = 4;
+                    assertEquals(expected, m.invoke(test, 2, 2));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -123,7 +138,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep3() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'.', '.', '.'},
@@ -134,7 +151,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(3, m.invoke(test, 2, 2));
+                    final int expected = 3;
+                    assertEquals(expected, m.invoke(test, 2, 2));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -144,7 +162,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep2() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'.', '.', '.'},
@@ -165,7 +185,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep1() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'.', '.', '.'},
@@ -186,7 +208,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep0() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'.', '*', '.'},
@@ -197,7 +221,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(0, m.invoke(test, 2, 2));
+                    final int expected = 0;
+                    assertEquals(expected, m.invoke(test, 2, 2));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -207,7 +232,9 @@ class MineSweeperTest {
     }
     @Test
     void testSweep1Edge() {
-        final MineSweeper test = new MineSweeper(3, 3);
+        final int rows = 3;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'.', '*', '.'},
@@ -218,7 +245,8 @@ class MineSweeperTest {
             if (m.getName().equals(SWEEP_METHOD)) {
                 m.setAccessible(true);
                 try {
-                    assertEquals(1, m.invoke(test, 2, 1));
+                    final int expected = 1;
+                    assertEquals(expected, m.invoke(test, 2, 1));
                 } catch (final ReflectiveOperationException ignored) {
 
                 }
@@ -230,7 +258,9 @@ class MineSweeperTest {
     // Full solve Tests
     @Test
     void testSolve4x4Given() {
-        final MineSweeper test = new MineSweeper(4, 4);
+        final int rows = 4;
+        final int columns = 4;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '.', '.', '.'},
                 {'.', '.', '.', '.'},
@@ -256,7 +286,9 @@ class MineSweeperTest {
     }
     @Test
     void testSolve3x5Given() {
-        final MineSweeper test = new MineSweeper(3, 5);
+        final int rows = 3;
+        final int columns = 5;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '*', '.', '.', '.'},
                 {'.', '.', '.', '.', '.'},
@@ -281,7 +313,9 @@ class MineSweeperTest {
 
     @Test
     void testSolve5x5() {
-        final MineSweeper test = new MineSweeper(5, 5);
+        final int rows = 5;
+        final int columns = 5;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '.', '.', '.', '.'},
                 {'.', '.', '*', '.', '.'},
@@ -310,7 +344,9 @@ class MineSweeperTest {
 
     @Test
     void testSolve4x6() {
-        final MineSweeper test = new MineSweeper(4, 6);
+        final int rows = 4;
+        final int columns = 6;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '.', '.', '*', '*', '*'},
                 {'.', '.', '.', '*', '.', '*'},
@@ -338,7 +374,9 @@ class MineSweeperTest {
 
     @Test
     void testSolve3x16() {
-        final MineSweeper test = new MineSweeper(3, 16);
+        final int rows = 3;
+        final int columns = 16;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '.', '.', '*', '.', '.', '.', '.',
                  '.', '*', '.', '.', '.', '.', '.', '*'},
@@ -369,7 +407,9 @@ class MineSweeperTest {
 
     @Test
     void testSolve16x3() {
-        final MineSweeper test = new MineSweeper(16, 3);
+        final int rows = 16;
+        final int columns = 3;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'.', '.', '.'},
                 {'.', '*', '.'},
@@ -419,7 +459,9 @@ class MineSweeperTest {
     }
     @Test
     void testSolve1x32() {
-        final MineSweeper test = new MineSweeper(1, 32);
+        final int rows = 1;
+        final int columns = 32;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '.', '.', '*', '*', '*', '.', '.', '*', '*', '.',
                  '*', '.', '.', '*', '.', '*', '.', '.', '*', '*', '*',
@@ -443,7 +485,9 @@ class MineSweeperTest {
     }
     @Test
     void testSolve32x1() {
-        final MineSweeper test = new MineSweeper(32, 1);
+        final int rows = 32;
+        final int columns = 1;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*'}, {'.'}, {'.'}, {'*'}, {'*'}, {'.'}, {'.'}, {'*'}, {'.'}, {'*'}, {'.'},
                 {'.'}, {'*'}, {'*'}, {'*'}, {'.'}, {'*'}, {'*'}, {'.'}, {'.'}, {'*'}, {'*'},
@@ -467,7 +511,9 @@ class MineSweeperTest {
     }
     @Test
     void testSolve9x9() {
-        final MineSweeper test = new MineSweeper(9, 9);
+        final int rows = 9;
+        final int columns = 9;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {
                 {'*', '.', '.', '.', '.', '.', '.', '.', '*'},
                 {'.', '*', '.', '.', '.', '.', '.', '*', '.'},
@@ -505,7 +551,9 @@ class MineSweeperTest {
 
     @Test
     void testSolve1x1Empty() {
-        final MineSweeper test = new MineSweeper(1, 1);
+        final int rows = 1;
+        final int columns = 1;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {{'.'}};
         test.mineFieldSet(field);
         final char[][] expected = {{'0'}};
@@ -524,10 +572,12 @@ class MineSweeperTest {
 
     @Test
     void testSolve100x100Empty() {
-        final MineSweeper test = new MineSweeper(100, 100);
-        final char[][] field = new char[100][100];
+        final int rows = 100;
+        final int columns = 100;
+        final MineSweeper test = new MineSweeper(rows, columns);
+        final char[][] field = new char[rows][columns];
         test.mineFieldSet(field);
-        final char[][] expected = new char[100][100];
+        final char[][] expected = new char[rows][columns];
         for (int row = 0; row < expected.length; row++) {
             for (int col = 0; col < expected[0].length; col++) {
                 expected[row][col] = '0';
@@ -547,10 +597,12 @@ class MineSweeperTest {
     }
     @Test
     void testSolve1x100Empty() {
-        final MineSweeper test = new MineSweeper(1, 100);
-        final char[][] field = new char[1][100];
+        final int rows = 1;
+        final int columns = 100;
+        final MineSweeper test = new MineSweeper(rows, columns);
+        final char[][] field = new char[rows][columns];
         test.mineFieldSet(field);
-        final char[][] expected = new char[1][100];
+        final char[][] expected = new char[rows][columns];
         for (int row = 0; row < expected.length; row++) {
             for (int col = 0; col < expected[0].length; col++) {
                 expected[row][col] = '0';
@@ -571,10 +623,12 @@ class MineSweeperTest {
 
     @Test
     void testSolve100x1Empty() {
-        final MineSweeper test = new MineSweeper(100, 1);
-        final char[][] field = new char[100][1];
+        final int rows = 100;
+        final int columns = 1;
+        final MineSweeper test = new MineSweeper(rows, columns);
+        final char[][] field = new char[rows][columns];
         test.mineFieldSet(field);
-        final char[][] expected = new char[100][1];
+        final char[][] expected = new char[rows][columns];
         for (int row = 0; row < expected.length; row++) {
             for (int col = 0; col < expected[0].length; col++) {
                 expected[row][col] = '0';
@@ -594,7 +648,9 @@ class MineSweeperTest {
     }
     @Test
     void testSolve1x1Mine() {
-        final MineSweeper test = new MineSweeper(1, 1);
+        final int rows = 1;
+        final int columns = 1;
+        final MineSweeper test = new MineSweeper(rows, columns);
         final char[][] field = {{'*'}};
         test.mineFieldSet(field);
         final char[][] expected = {{'*'}};
@@ -611,15 +667,17 @@ class MineSweeperTest {
     }
     @Test
     void testSolve1x100AllMines() {
-        final MineSweeper test = new MineSweeper(1, 100);
-        final char[][] field = new char[1][100];
+        final int rows = 1;
+        final int columns = 100;
+        final MineSweeper test = new MineSweeper(rows, columns);
+        final char[][] field = new char[rows][columns];
         for (int row = 0; row < field.length; row++) {
             for (int col = 0; col < field[0].length; col++) {
                 field[row][col] = '*';
             }
         }
         test.mineFieldSet(field);
-        final char[][] expected = new char[1][100];
+        final char[][] expected = new char[rows][columns];
         for (int row = 0; row < expected.length; row++) {
             for (int col = 0; col < expected[0].length; col++) {
                 expected[row][col] = '*';
@@ -639,15 +697,17 @@ class MineSweeperTest {
     }
     @Test
     void testSolve100x1AllMines() {
-        final MineSweeper test = new MineSweeper(100, 1);
-        final char[][] field = new char[100][1];
+        final int rows = 100;
+        final int columns = 1;
+        final MineSweeper test = new MineSweeper(rows, columns);
+        final char[][] field = new char[rows][columns];
         for (int row = 0; row < field.length; row++) {
             for (int col = 0; col < field[0].length; col++) {
                 field[row][col] = '*';
             }
         }
         test.mineFieldSet(field);
-        final char[][] expected = new char[100][1];
+        final char[][] expected = new char[rows][columns];
         for (int row = 0; row < expected.length; row++) {
             for (int col = 0; col < expected[0].length; col++) {
                 expected[row][col] = '*';
@@ -667,15 +727,17 @@ class MineSweeperTest {
     }
     @Test
     void testSolve100x100AllMines() {
-        final MineSweeper test = new MineSweeper(100, 100);
-        final char[][] field = new char[100][100];
+        final int rows = 100;
+        final int columns = 100;
+        final MineSweeper test = new MineSweeper(rows, columns);
+        final char[][] field = new char[rows][columns];
         for (int row = 0; row < field.length; row++) {
             for (int col = 0; col < field[0].length; col++) {
                 field[row][col] = '*';
             }
         }
         test.mineFieldSet(field);
-        final char[][] expected = new char[100][100];
+        final char[][] expected = new char[rows][columns];
         for (int row = 0; row < expected.length; row++) {
             for (int col = 0; col < expected[0].length; col++) {
                 expected[row][col] = '*';
