@@ -2,6 +2,7 @@
  * @author Alex Bell
  * @author Bri Andres
  * @author Jerry Libago
+ * @version 1.0
  */
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
